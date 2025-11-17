@@ -1,7 +1,6 @@
 export default function Contact() {
   return (
     <section id="contact" className="py-12 bg-white rounded-xl p-8 shadow-xl">
-
       {/* Heading */}
       <h2 className="text-4xl font-extrabold text-gray-900 text-center">
         संपर्क और शिकायत निवारण (Get In Touch)
@@ -11,7 +10,6 @@ export default function Contact() {
 
       {/* Grid Layout */}
       <div className="mt-10 grid gap-8 md:grid-cols-2">
-
         {/* LEFT: Contact Form */}
         <div>
           <h3 className="text-2xl font-bold text-[#000080] mb-4">
@@ -19,7 +17,6 @@ export default function Contact() {
           </h3>
 
           <form className="space-y-4">
-
             <input
               type="text"
               placeholder="आपका नाम"
@@ -34,9 +31,7 @@ export default function Contact() {
               className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#000080]"
             />
 
-            <select
-              className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#000080]"
-            >
+            <select className="w-full p-3 border border-gray-300 rounded-lg focus:border-[#000080]">
               <option>शिकायत का प्रकार (Housing, Labor, PWD, General)</option>
               <option>Housing Issue</option>
               <option>Labor/Employment Issue</option>
@@ -58,13 +53,11 @@ export default function Contact() {
             >
               Send Message
             </button>
-
           </form>
         </div>
 
         {/* RIGHT: Contact Details */}
         <div className="p-6 bg-gray-50 rounded-lg shadow">
-
           <h3 className="text-2xl font-bold text-[#000080] mb-4">
             Official Office Address
           </h3>
@@ -78,52 +71,145 @@ export default function Contact() {
             Durg District, Chhattisgarh, India
           </address>
 
-          <p className="mt-4 text-gray-700 font-bold">
-            Phone: +91-XXXXXXXXXX
-          </p>
+          <p className="mt-4 text-gray-700 font-bold">Phone: +91-XXXXXXXXXX</p>
 
           <h3 className="text-2xl font-bold text-[#000080] mt-6 mb-3">
             Social Media
           </h3>
 
           <div className="flex space-x-4">
-
             {/* Facebook */}
             <a
-              href="https://facebook.com/"
+              href="https://www.facebook.com/SenRikesh/"
               target="_blank"
               rel="noreferrer"
               className="text-blue-600 hover:text-blue-800 transition"
             >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M22.675 0h-21.35C.593 0 0 .593 0 1.325v21.35C0 
-                23.407.593 24 1.325 24h11.498v-9.294H9.695v-3.626h3.128V8.413c0-3.1 
-                1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.793.143v3.235h-1.921c-1.503 
-                0-1.795.715-1.795 1.765v2.316h3.626l-.472 3.626h-3.154V24h6.116C23.407 
-                24 24 23.407 24 22.675V1.325C24 .593 23.407 0 22.675 0z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                role="img"
+              >
+                <defs>
+                  <linearGradient
+                    id="fbGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#1877F2" />
+                    <stop offset="100%" stop-color="#0A54C6" />
+                  </linearGradient>
+                </defs>
+
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  ry="5"
+                  fill="url(#fbGradient)"
+                />
+
+                <path
+                  fill="#ffffff"
+                  d="M14.5 7H13c-1.1 0-1.5.5-1.5 1.4V10h3l-.4 3h-2.6v7h-3v-7H7v-3h1.5V8.1C8.5 5.8 9.9 5 12 5c1.2 0 2 .1 2.5.2v1.8z"
+                />
               </svg>
             </a>
 
             {/* YouTube */}
             <a
-              href="https://youtube.com/"
+              href="https://www.youtube.com/@RIKESHSENBJP"
               target="_blank"
               rel="noreferrer"
               className="text-red-600 hover:text-red-800 transition"
             >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M19.615 3.184c-.788-1.052-1.66-1.176-2.597-1.318C14.798 
-                1.49 13.4 1.4 12 1.4c-1.4 0-2.798.09-5.018.466-.937.142-1.809.266-2.597 
-                1.318C3.004 4.36 2.8 5.763 2.8 8s.204 3.64.585 4.816c.788 1.052 1.66 
-                1.176 2.597 1.318C9.202 14.51 10.6 14.6 12 14.6c1.4 0 2.798-.09 5.018-.466 
-                .937-.142 1.809-.266 2.597-1.318.381-1.176.585-2.579.585-4.816s-.204-3.64-.585-4.816zM10
-                9.5v-3l3.5 1.5L10 9.5z" />
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                role="img"
+              >
+                <defs>
+                  <linearGradient
+                    id="ytGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#FF0000" />
+                    <stop offset="100%" stop-color="#CC0000" />
+                  </linearGradient>
+                </defs>
+
+                <rect
+                  x="2"
+                  y="4"
+                  width="20"
+                  height="16"
+                  rx="4"
+                  ry="4"
+                  fill="url(#ytGradient)"
+                />
+
+                <polygon points="10,8 16,12 10,16" fill="#ffffff" />
               </svg>
             </a>
-
+            {/* instagram */}
+            <a
+              href="https://www.instagram.com/rikeshsenbjp/?hl=en"
+              target="_blank"
+              rel="noreferrer"
+              className="text-red-600 hover:text-red-800 transition"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                width="48"
+                height="48"
+                aria-hidden="true"
+                role="img"
+              >
+                <defs>
+                  <linearGradient
+                    id="instaGradient"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#F58529" />
+                    <stop offset="50%" stop-color="#DD2A7B" />
+                    <stop offset="100%" stop-color="#515BD4" />
+                  </linearGradient>
+                </defs>
+                <rect
+                  x="2"
+                  y="2"
+                  width="20"
+                  height="20"
+                  rx="5"
+                  ry="5"
+                  fill="url(#instaGradient)"
+                />
+                <path
+                  d="M12 7.2a4.8 4.8 0 1 0 0 9.6 4.8 4.8 0 0 0 0-9.6zm0 7.8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"
+                  fill="#ffffff"
+                />
+                <circle cx="17.5" cy="6.5" r="1.1" fill="#ffffff" />
+              </svg>
+            </a>
           </div>
         </div>
-
       </div>
     </section>
   );

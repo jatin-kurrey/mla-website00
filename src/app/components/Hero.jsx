@@ -18,7 +18,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-4 text-xl text-gray-600 font-medium italic">
-            "Ek Nayi Pehchan. जमीन से जुड़ा हुआ, विकास को समर्पित।"
+            Sewa aur vikas ke saath, imaandaari se janta ka vishwas jeetne ka sankalp.
           </p>
 
           <div className="mt-8">

@@ -30,7 +30,7 @@ export default function Legislative() {
             Focus on Implementation
           </p>
           <p className="text-sm text-gray-500 mt-1">
-            सवाल नहीं — सीधे समाधान (जैसे PWD बहाली)
+            सवाल नहीं — सीधे समाधान 
           </p>
         </div>
 
