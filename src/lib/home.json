@@ -1,0 +1,29 @@
+  {
+  "parichay": {
+    "title": "मेरा परिचय (About Me)",
+    "subtitle": "श्री रिकेश सेन: एक जीवन, एक मिशन (Shri Rikesh Sen: One Life, One Mission)",
+    "description1": "श्री रिकेश सेन का जीवन संघर्ष, समर्पण और जनता की सेवा का प्रतीक है। साधारण पृष्ठभूमि से आगे बढ़ते हुए, उन्होंने निरंतर मेहनत, ईमानदारी और जनसेवा को अपना मार्ग बनाया। यही प्रतिबद्धता उन्हें <strong>सार्वजनिक जीवन के महत्वपूर्ण पद</strong> तक लेकर आई है, जहाँ वे समाज के हर वर्ग के लिए कार्य कर रहे हैं।",
+    "description2": "उनकी शिक्षा <strong>B.S.P. Higher Secondary School, Bhilai</strong> में हुई थी — जो उन्हें अपने क्षेत्र और लोगों से गहराई से जोड़ती है।",
+    "experienceTitle": "अनुभव ही सबसे बड़ी शिक्षा",
+    "experienceDescription": "MLA Sen अपनी 'Elite Academic Credentials' के बजाय <strong>'A Lifetime of Education in Public Service'</strong> पर जोर देते हैं। उनका मानना है कि जनता के बीच रहकर काम करने का अनुभव, किसी भी किताब से ज्यादा महत्वपूर्ण होता है।",
+    "quickFacts": {
+      "title": "Quick Facts",
+      "constituency": "<strong>Constituency:</strong> Vaishali Nagar, Durg (CG)",
+      "party": "<strong>Party:</strong> Bharatiya Janata Party (BJP)",
+      "winningMargin": "<strong>Winning Margin (2023):</strong> 40,074 Votes"
+    }
+  },
+  "transparency": {
+    "title": "पारदर्शिता और सुशासन",
+    "subtitle": "एक जिम्मेदार और जवाबदेह प्रशासन के लिए प्रतिबद्ध",
+    "card5": {
+        "title": "स्वच्छ, ईमानदार और नैतिक सार्वजनिक जीवन",
+        "description": "समाज के कमजोर वर्गों के लिए जिम्मेदारी और संवेदनशीलता हमारी नीति का अहम हिस्सा है।",
+        "points": [
+            "जरूरतमंद परिवारों के लिए सहायता कार्यक्रम",
+            "स्कूलों और युवाओं के लिए शिक्षा एवं खेल प्रोत्साहन",
+            "वृद्धजन एवं दिव्यांगों के लिए विशेष समर्थन कार्यक्रम"
+        ]
+    }
+  }
+}

@@ -1,6 +1,21 @@
 "use client";
+import { useState, useCallback, useMemo } from "react";
 
-import { useState } from "react";
+const FormField = ({ name, value, onChange, type = "text", placeholder, required, as = "input" }) => {
+  const InputComponent = as;
+  return (
+    <InputComponent
+      name={name}
+      value={value}
+      onChange={onChange}
+      type={type}
+      placeholder={placeholder}
+      required={required}
+      className="w-full p-3 border border-gray-300 rounded-lg"
+      {...(as === 'textarea' ? { rows: "4" } : {})}
+    />
+  );
+};
 
 export default function Contact() {
   const [form, setForm] = useState({
@@ -8,16 +23,15 @@ export default function Contact() {
     mobile: "",
     type: "Suggestion",
     message: "",
-    email: "",
   });
-
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
+  const handleChange = useCallback((e) => {
+    const { name, value } = e.target;
+    setForm(prevForm => ({ ...prevForm, [name]: value }));
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -32,19 +46,32 @@ export default function Contact() {
         body: JSON.stringify(form),
       });
 
+      if (!res.ok) {
+        const errorData = await res.json().catch(() => ({ error: 'Failed to send message' }));
+        throw new Error(errorData.error || 'An unknown error occurred');
+      }
+
       const data = await res.json();
 
-      if (!data.success) throw new Error(data.error);
+      if (!data.success) {
+        throw new Error(data.error || 'An unknown error occurred');
+      }
 
       setSuccess("Message sent successfully!");
-      setForm({ name: "", mobile: "", type: "Suggestion", message: "", email: "" });
+      setForm({ name: "", mobile: "", type: "Suggestion", message: "" });
     } catch (err) {
-      setError("Failed to send. Try again later.");
+      setError(err.message || "Failed to send. Try again later.");
       console.error(err);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
+
+  const formFields = useMemo(() => [
+    { name: "name", placeholder: "आपका नाम", required: true },
+    { name: "mobile", type: "tel", placeholder: "मोबाइल नंबर", required: true },
+    { name: "message", as: "textarea", placeholder: "आपका संदेश/शिकायत", required: true },
+  ], []);
 
   return (
     <section id="contact" className="py-12 bg-white rounded-xl p-8 shadow-xl">
@@ -55,28 +82,11 @@ export default function Contact() {
       <div className="w-24 h-1 bg-[#000080] mx-auto my-4"></div>
 
       <div className="mt-10 grid gap-8 md:grid-cols-2">
-        {/* LEFT */}
         <div>
-          <form className="space-y-4" onSubmit={handleSubmit}>
-            <input
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              type="text"
-              placeholder="आपका नाम"
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg"
-            />
-
-            <input
-              name="mobile"
-              value={form.mobile}
-              onChange={handleChange}
-              type="tel"
-              placeholder="मोबाइल नंबर"
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg"
-            />
+          <form className="space-y-4" onSubmit={handleSubmit} noValidate>
+            {formFields.map(field => (
+              <FormField key={field.name} {...field} value={form[field.name]} onChange={handleChange} />
+            ))}
 
             <select
               name="type"
@@ -89,32 +99,22 @@ export default function Contact() {
               <option>Other</option>
             </select>
 
-            <textarea
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="आपका संदेश/शिकायत"
-              rows="4"
-              required
-              className="w-full p-3 border border-gray-300 rounded-lg"
-            />
-
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-[#000080] text-white font-bold rounded-lg"
+              className="w-full px-6 py-3 bg-[#000080] text-white font-bold rounded-lg transition-colors hover:bg-blue-900 disabled:bg-gray-400"
+              disabled={loading}
             >
               {loading ? "Sending..." : "Send Message"}
             </button>
 
-            {success && <p className="text-green-600">{success}</p>}
-            {error && <p className="text-red-600">{error}</p>}
+            {success && <p className="text-green-600 text-center font-semibold">{success}</p>}
+            {error && <p className="text-red-600 text-center font-semibold">{error}</p>}
           </form>
         </div>
 
-        {/* RIGHT SIDE (unchanged) */}
         <div>
           <h3 className="font-bold text-xl text-[#000080]">Office Contact</h3>
-          <p>Yaha tum office address / phone / email rakh sakte ho.</p>
+          <p className="text-gray-600 mt-2">Yaha tum office address / phone / email rakh sakte ho.</p>
         </div>
       </div>
     </section>
