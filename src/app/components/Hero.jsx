@@ -1,8 +1,9 @@
-
-import Image from "next/image";
+  import Image from "next/image";
 import img1 from "../images/img1.png";
+import home from "@/lib/home.json";
 
 export default function Hero() {
+  const { parichay } = home;
   return (
     <section id="home" className="py-12 md:py-16 bg-white rounded-xl shadow-2xl overflow-hidden">
     
@@ -22,8 +23,8 @@ export default function Hero() {
           </p>
 
           <div className="mt-8">
-            <div className="inline-block px-6 py-3 bg-[#000080] text-white rounded-lg font-bold text-lg shadow-lg">
-              2023 Victory: 40,074 Votes of Trust
+            <div className="inline-block px-6 py-3 bg-[#000080] text-white rounded-lg font-bold text-lg shadow-lg"
+              dangerouslySetInnerHTML={{ __html: parichay.quickFacts.winningMargin }}>
             </div>
           </div>
         </div>
