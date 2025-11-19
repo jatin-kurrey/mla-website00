@@ -79,6 +79,21 @@ export default function AdminDashboard() {
                     Use the sidebar navigation to manage complaints, suggestions, and work portfolio items.
                 </p>
             </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                <StatCard title="Total Messages" value={messages.length} icon="📩" />
+                <StatCard title="Complaints" value={messages.filter(m => m.type === 'Complaint').length} icon="😠" />
+                <StatCard title="Suggestions" value={messages.filter(m => m.type === 'Suggestion').length} icon="💡" />
+                <StatCard title="Work Items" value={works.length} icon="🏗️" />
+            </div>
+            
+            <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <h2 className="text-2xl font-bold text-gray-800 mb-4">Welcome to the Admin Panel</h2>
+                <p className="text-gray-600">
+                    Use the sidebar navigation to manage complaints, suggestions, and work portfolio items.
+                </p>
+            </div>
            
            
 
